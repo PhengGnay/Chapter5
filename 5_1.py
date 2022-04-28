@@ -43,3 +43,30 @@
 #     outfile.close()
 # main()
 
+# a_list = []
+# a_set = {}
+# a_list.append("A")
+# a_set.add("A") 
+
+# def main(): 
+#     words = ["nudge", "nudge", "wink", "wink"]
+#     terms = set(words)
+#     print("terms", terms)
+#     terms.add("wink")
+#     terms.add("new wink")
+#     terms.discard("nudge")
+    
+# main()
+
+# arr1 = ["Alpha", "Bravo", "Charlie"]
+# arr2 = ["Bravo", "Dalta"]
+# set1 = set(arr1)
+# set2 = set(arr2)
+
+# print("set1", set1)
+# print("set2", set2) 
+# #Built-in Set methods: 1 .union, 2 .intersection, 3 . difference()
+
+# print("union: ", set1.union(set2))
+# print("intersection: ", set1.intersection(set2))
+# print("difference: ", set1.difference(set2))
