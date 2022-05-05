@@ -64,7 +64,7 @@
 
 # user.clear()
 # print("Cleared user object: ", user)
-
+# original_dict = {}
 # dict1 = {
 #     "a": "A", 
 #     "b": "B",
@@ -77,7 +77,16 @@
 #     "e": "E"
 # }
 
-# print("Merged Dictionary", dict1.update(dict2)) #TOCO: check python version
+# dict3 = {
+#     "f": "F",
+#     "g": "G",
+#     "h": "H"
+# }
+
+# dict1.update(dict2)
+# dict1.update(dict3)
+# print("dict1", dict1)
+# print("Merged Dictionary", original_dict.update(dict2)) #TOCO: check python version
 
 # def main(): 
 #     print("Main running...")
@@ -90,3 +99,26 @@
 #     print("Keys", d.keys())
 #     print("Values", d.values())
 # main()
+
+from tkinter import W
+
+
+def main():
+    textese_dict = create_dictionary("Textese.txt")
+    prompt = "Enter a simple sentence in lowercase letters without any punctuations: "
+    sentence = input(prompt)
+    translate(sentence, textese_dict)
+
+def create_dictionary(file_name):
+    infile = open(file_name, "r") # "Textese.txt"
+    text_list = [ line.rstrip() for line in infile ]  #creates a list of stringss from textese.txt
+    infile.close()
+    output = [ x.split(",") for x in text_list ] # .split is creating an array of arrays by using the (,)
+    return dict(output)
+
+def translate(sentence, textese_dict): 
+    words = sentence.split()
+    for word in words:
+        print(textese_dict.get(word, word) + " ", end="")
+
+main()
